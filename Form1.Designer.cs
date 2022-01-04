@@ -1,4 +1,4 @@
-namespace Windows_Helper
+﻿namespace Windows_Helper
 {
     partial class Form1
     {

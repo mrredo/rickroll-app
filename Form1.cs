@@ -10,7 +10,7 @@ namespace Windows_Helper
         }
 
         string urls = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-        string[] codeS = { "were", "strangers", "never", "give", "known", "down", "desert", "cry", "wanna", "goodbye" };
+        string[] codeS = { "were", "strangers", "never", "give", "known", "down", "desert", "cry", "wanna", "goodbye", "around" };
         
         
         public void OpenUrl(string url)
