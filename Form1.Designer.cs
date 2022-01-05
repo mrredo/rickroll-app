@@ -1,4 +1,4 @@
-﻿namespace Windows_Helper
+namespace Windows_Helper
 {
     partial class Form1
     {
@@ -39,6 +39,7 @@
             this.enterSecretCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CodeTextBoxMenu = new System.Windows.Forms.ToolStripTextBox();
             this.CodeLabelMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.githubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +64,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(847, 133);
+            this.label1.Location = new System.Drawing.Point(826, 141);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.MaximumSize = new System.Drawing.Size(350, 346);
             this.label1.Name = "label1";
@@ -99,20 +100,21 @@
             // RulesLabel
             // 
             this.RulesLabel.AutoSize = true;
+            this.RulesLabel.BackColor = System.Drawing.Color.White;
             this.RulesLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.RulesLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RulesLabel.Font = new System.Drawing.Font("Stencil", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RulesLabel.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.RulesLabel.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.RulesLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.RulesLabel.Location = new System.Drawing.Point(1366, 371);
+            this.RulesLabel.Location = new System.Drawing.Point(1414, 333);
             this.RulesLabel.Name = "RulesLabel";
-            this.RulesLabel.Size = new System.Drawing.Size(509, 50);
+            this.RulesLabel.Size = new System.Drawing.Size(412, 46);
             this.RulesLabel.TabIndex = 5;
             this.RulesLabel.Text = "1. Power and restart buttons are not allowed\r\n2. U have to enjoy the rickroll";
             this.RulesLabel.DoubleClick += new System.EventHandler(this.RulesLabel_DoubleClick);
             // 
             // CodeTextBox
             // 
-            this.CodeTextBox.Location = new System.Drawing.Point(234, 308);
+            this.CodeTextBox.Location = new System.Drawing.Point(107, 312);
             this.CodeTextBox.MaxLength = 9;
             this.CodeTextBox.Name = "CodeTextBox";
             this.CodeTextBox.Size = new System.Drawing.Size(126, 23);
@@ -134,7 +136,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.enterSecretCodeToolStripMenuItem});
+            this.enterSecretCodeToolStripMenuItem,
+            this.githubToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1924, 24);
@@ -164,6 +167,13 @@
             this.CodeLabelMenu.Name = "CodeLabelMenu";
             this.CodeLabelMenu.Size = new System.Drawing.Size(274, 22);
             this.CodeLabelMenu.Text = "Enter secret code to not get rickrolled.";
+            // 
+            // githubToolStripMenuItem
+            // 
+            this.githubToolStripMenuItem.Name = "githubToolStripMenuItem";
+            this.githubToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.githubToolStripMenuItem.Text = "Github";
+            this.githubToolStripMenuItem.Click += new System.EventHandler(this.githubToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -208,5 +218,6 @@
         private ToolStripMenuItem enterSecretCodeToolStripMenuItem;
         private ToolStripTextBox CodeTextBoxMenu;
         private ToolStripMenuItem CodeLabelMenu;
+        private ToolStripMenuItem githubToolStripMenuItem;
     }
 }
