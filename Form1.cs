@@ -10,20 +10,29 @@ namespace Windows_Helper
         }
 
         string urls = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-        string[] codeS = { "were", "strangers", "never", "give", "known", "down", "desert", "cry", "wanna", "goodbye", "around" };
+        string[] codeS = { "were", "strangers", "never", "give", "known", "down", "desert", "cry", "wanna", "goodbye", "around", "hurt", "each", "around", "gotta", "you" };
         
         
-        public void OpenUrl(string url)
+        public void OpenUrl(string url, Boolean loop)
         {
             try
             {
                 var psi = new ProcessStartInfo();
                 psi.UseShellExecute = true;
                 psi.FileName = url;
-                for(int i = 0; i < 5; i++)
+                switch(loop)
                 {
-                    Process.Start(psi);
+                    case true:
+                        for (int i = 0; i < 5; i++)
+                        {
+                            Process.Start(psi);
+                        }
+                        break;
+                    case false:
+                        Process.Start(psi);
+                        break;
                 }
+
             }
             catch
             {
@@ -39,7 +48,7 @@ namespace Windows_Helper
             this.FormBorderStyle = FormBorderStyle.None;
 
             this.WindowState = FormWindowState.Normal;
-            OpenUrl(urls);
+            OpenUrl(urls, true);
             this.WindowState = FormWindowState.Maximized;
 
 
@@ -54,7 +63,7 @@ namespace Windows_Helper
             this.FormBorderStyle = FormBorderStyle.None;
 
             this.WindowState = FormWindowState.Normal;
-            OpenUrl(urls);
+            OpenUrl(urls, true);
             this.WindowState = FormWindowState.Maximized;
         }
 
@@ -70,9 +79,8 @@ namespace Windows_Helper
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            return;
             this.WindowState = FormWindowState.Normal;
-            OpenUrl(urls);
+            OpenUrl(urls, true);
             Thread.Sleep(1000);
             MessageBox.Show("enjoy rickroll my dude");
             this.WindowState = FormWindowState.Maximized;
@@ -80,10 +88,9 @@ namespace Windows_Helper
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
-            return;
             MessageBox.Show("enjoy rickroll my dude");
             this.WindowState = FormWindowState.Normal;
-            OpenUrl(urls);
+            OpenUrl(urls, true);
             this.WindowState = FormWindowState.Maximized;
         }
 
@@ -106,7 +113,7 @@ namespace Windows_Helper
             switch(result)
             {
                 case DialogResult.OK:
-                    OpenUrl(urls);
+                    OpenUrl(urls, true); ;
                     break;
                 case DialogResult.Cancel:
                     Application.Exit();
@@ -140,7 +147,7 @@ namespace Windows_Helper
                     Application.Exit();
                 } else
                 {
-                    OpenUrl(urls);
+                    OpenUrl(urls, true);
                 }
             }
         }
@@ -152,6 +159,7 @@ namespace Windows_Helper
             Random random = new Random();
             int num = random.Next(0, codeS.Length);
             string value = codeS[num];
+            
             if (e.KeyCode == Keys.Enter)
             {
                 if (CodeTextBoxMenu.Text.ToLower() == value)
@@ -161,9 +169,15 @@ namespace Windows_Helper
                 }
                 else
                 {
-                    OpenUrl(urls);
+                    OpenUrl(urls, true);
                 }
             }
+        }
+
+        private void githubToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://github.com/mrredo/rickroll-app", false);
+            OpenUrl(urls, false);
         }
     }
 }
